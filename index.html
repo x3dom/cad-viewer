@@ -1,0 +1,191 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>slim 3D Viewer</title>
+
+
+    <link rel="stylesheet" type="text/css" href="inc/jQuery-ui/themes/smoothness/jquery-ui-1.8.18.custom.css" />
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.css"/>
+    <!--link rel="stylesheet" type="text/css" href="../x3dom/src/x3dom.css" /-->
+    <link rel="stylesheet" type="text/css" href="slimViewer.css"/>
+
+
+    <!-- BEGIN:X3DOM -->
+
+    <!--script type="text/javascript" src="../x3dom/src/lang/Array.js"></script>
+    <script type="text/javascript" src="../x3dom/src/Internals.js"></script>
+    <script type="text/javascript" src="../x3dom/src/debug.js"></script>
+    <script type="text/javascript" src="../x3dom/src/ImageLoadManager.js"></script>
+    <script type="text/javascript" src="../x3dom/src/util/Properties.js"></script>
+    <script type="text/javascript" src="../x3dom/src/util/DoublyLinkedList.js"></script>
+    <script type="text/javascript" src="../x3dom/src/util/EarClipping.js"></script>
+    <script type="text/javascript" src="../x3dom/src/X3DCanvas.js"></script>
+    <script type="text/javascript" src="../x3dom/src/Runtime.js"></script>
+    <script type="text/javascript" src="../x3dom/src/Main.js"></script>
+    <script type="text/javascript" src="../x3dom/src/gfx_webgl.js"></script>
+    <script type="text/javascript" src="../x3dom/src/gfx_flash.js"></script>
+    <script type="text/javascript" src="../x3dom/src/X3DDocument.js"></script>
+    <script type="text/javascript" src="../x3dom/src/MatrixMixer.js"></script>
+    <script type="text/javascript" src="../x3dom/src/Viewarea.js"></script>
+    <script type="text/javascript" src="../x3dom/src/Mesh.js"></script>
+    <script type="text/javascript" src="../x3dom/src/fields.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/NodeNameSpace.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Core.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Grouping.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Bindable.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Rendering.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Shape.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Lighting.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Followers.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Interpolation.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Time.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Networking.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/EnvironmentalEffects.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Navigation.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Text.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Sound.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Texturing.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Shaders.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Geometry3D.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Geospatial.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/Geometry2D.js"></script>
+    <script type="text/javascript" src="../x3dom/src/nodes/VolumeRendering.js"></script>
+    <script type="text/javascript" src="../x3dom/src/Docs.js"></script>
+    <!-- END:X3DOM -->
+
+    <script type='text/javascript' src='libs/x3dom-full.js'></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.js"></script>
+    <script type="text/javascript" src="inc/jsTree/jquery.jstree.js"></script>
+    <!--script type="text/javascript" src="inc/JQuery/js/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="inc/JQuery/js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="inc/JQuery/js/jquery.ui.mouse.js"></script>
+    <script type="text/javascript" src="inc/JQuery/js/jquery.ui.resizable.js"></script>
+    <script type="text/javascript" src="inc/JQuery/js/jquery.ui.autocomplete.js"></script>
+    <script type="text/javascript" src="inc/JQuery/js/jquery.cookie.js"></script-->
+
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="tree.js"></script>
+    <script type="text/javascript" src="SceneGraph.js"></script>
+
+    <script type="text/javascript" src="modules/modulePopUp.js"></script>
+    <script type="text/javascript" src="modules/moduleObjectBrowser.js"></script>
+    <script type="text/javascript" src="modules/moduleMenu.js"></script>
+    <script type="text/javascript" src="modules/moduleSearch.js"></script>
+    <script type="text/javascript" src="modules/moduleTabManager.js"></script>
+    <script type="text/javascript" src="modules/moduleMetaData.js"></script>
+    <script type="text/javascript" src="modules/moduleAnnotations.js"></script>
+
+
+    <!-- just for debugging
+    <script src="https://raw.github.com/padolsey/jQuery-Lint/master/jquery.lint.js"></script>
+    -->
+</head>
+
+<body>
+<div data-role="page" id="view" data-theme="a">
+
+    <div data-role="header" data-title="Viewer">
+        <h3 data-inline="true" id="breadCrumbs">Viewer</h3>
+        <div id="headerMenuQuickLinks" data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
+            <!--a href="#objBrowser" data-role="button"> objBrowser </a-->
+        </div>
+    </div>
+
+    <!--http://jquerymobile.com/test/docs/lists/lists-search-filtertext.html-->
+    <div id="sceneGraphContainer" class="pos_leftPane">
+        <div class="search">
+            <!--input type="search" name="search" id="searchFieldGraph" value="search Scene Graph" data-theme="b" data-mini="true" > </input-->
+            <input id="searchFieldGraph" type="search" > </input>
+        </div>
+        <div id="treeContainer" class="ui-corner-all">
+            <div id="tree">
+                <ul id="treeList">
+                </ul>
+            </div>
+        </div>
+        <div id="switchViewTreeSliderContainer">
+            <select id="switchViewTreeSlider" name="slider" data-role="slider" data-mini="true">
+                <option value="accordion">-accordion</option>
+                <option value="tree">tree</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="menuContainer" data-role="controlgroup" data-mini="true" style="display: none;">
+        <div id="searchMenu" class="search" style="display: none;">
+            <!--<input type="search" name="search" id="searchFieldMenu" value="search Menu" data-theme="b" data-mini="true" />-->
+            <input id="searchFieldMenu" type="search" />
+        </div>
+    </div>
+
+
+    <div id="metaDataContainer" data-role="controlgroup" data-mini="true" class="pos_leftPane" style="display: none;">
+        <div id="searchMetaData" class="search" style="display: none;">
+            <!--<input type="search" name="search" id="searchFieldMenu" value="search Menu" data-theme="b" data-mini="true" />-->
+            <input id="searchFieldMetaData" type="search" />
+        </div>
+        <div id="metaDataList">  </div>
+    </div>
+
+
+    <div id="annotationsContainer" data-role="controlgroup" data-mini="true" class="pos_leftPane" style="display: none;">
+        <div id="searchAnnotations" class="search" style="display: none;">
+            <!--<input type="search" name="search" id="searchFieldMenu" value="search Menu" data-theme="b" data-mini="true" />-->
+            <input id="searchFieldAnnotations" type="search" />
+        </div>
+        <div id="annotationsList">  </div>
+    </div>
+
+
+    <div id="tabs" data-role="navbar">
+        <ul>
+            <li><a id="leftPane_tab_blank"      href="#"><img src="img/GlyphishIcons-Free/icons/176-ipad2.png" alt="full viewport"></a></li>
+            <li><a id="leftPane_tab_sceneGraph" href="#" class="ui-btn-active">Graph</a></li>
+            <li><a id="leftPane_tab_metaData"   href="#">MetaData</a></li>
+            <li><a id="leftPane_tab_annotation" href="#">Annotation</a></li>
+            <!--li><a id="leftPane_tab_menu"       href="#">Menu</a></li-->
+        </ul>
+    </div>
+
+    <div id="x3dViewport" data-role="content">
+        <X3D id="x3dElement">
+            <div class="x3dom-statdiv" style="display: inline;"></div>
+            <Scene id='scene'>
+                <Viewpoint id="ViewpointMain" description="Camera Main"></Viewpoint>
+
+                <Inline id="modelRoot" nameSpaceName="inline" mapDEFToID="true" url="" onload="mainInit();"></Inline>
+
+                <Group id="annotationMarker" render="true"></Group>
+            </Scene>
+
+        </X3D>
+
+        <X3D id='CoordinateAxes' showStat='false' showLog='false'>
+            <scene id="helper_scene">
+                <viewpoint id="coordinateAxesViewpoint" centerOfRotation='0 0 0' position='0 0 3'></viewpoint>
+                <Inline mapDEFToID="true" nameSpaceName="CoordinateAxes" url="data/CoordinateAxes.x3d"></Inline>
+            </scene>
+        </X3D>
+    </div>
+
+</div>
+
+
+
+
+<div data-role="page" id="objBrowser" data-theme="a">
+    <div id="objBrowserContainer" data-role="controlgroup" data-mini="true">
+         <div id="searchObjBrowser" class="search" style="display: none;">
+            <input id="searchFieldObjBrowser" type="search" />
+        </div>
+        <ul id="resultList">
+        </ul>
+    </div>
+</div>
+</body>
+</html>

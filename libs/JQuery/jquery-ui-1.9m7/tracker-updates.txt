@@ -1,0 +1,52 @@
+TODO: prototype number-based pagers
+TODO tablesorter.html:24, get rid of refresh call
+	- debounced autorefresh in dataview?
+
+done: refactor pager, match icon names with method names; fixed styles
+still open: update pager wiki page to reflect that change (first->start, last->end)
+
+done: inifinite scroll paging
+still open: grid scroll paging
+
+done: dataviewlocal
+still open: wiki page
+
+done: units for preloader
+still open: didn't yet catch any errors, see todo below; use mockjax to mock long running requests
+
+done: extract sorting from menugrid
+still open: figure out what to do with that, move it to grid? impl relies on menugrid being used together, not cool
+
+todo: spec dataview's source method, request and response arguments, including page prop on request
+todo: figure out how to remove the need to set widgetEventPrefix: "dataview" on all dataview extensions, or document that
+todo: dataviewlocal wiki page, spec, ...
+
+todo: make local copy of images of slideshow-local demo
+
+todo: cell formatting, see grid-editing/grid.html:43
+
+todo: preloader dataview likely fails when multiple requests run in parallel; could (base) dataview check if source returns a jqXHR, store that and call abort if another request comes in before the previous finished? more or less same as autocomplete does
+- if that is handled by dataview, would that help in adopting dataview within autocomplete?
+  - do we really need the observable dependency in dataview? could also replicate replaceAll...
+
+done:
+- clean up grid-selectable.html, better styling, deals with array properties
+- extend helpers/serializeForm to deal with arrays
+- fix grid-filter to deal with numbers without operand, use == instead of like as default
+- give each preloader its own cache, no reason to share across instances
+
+random todos:
+- editing/csv-editor, no proper escapaing
+	what does proper csv encoding look like? escape comma? escape quotes?
+- editing/editor.js: meh, replace with editable
+	no go before that isn't in master?
+- editing/grid.html: date/time formatting
+- editing/localstore.js: unbinding? probably more crap in there then just that
+- editing/todo-app.html: incremental rendering?
+- spf/autocomple.html: create table on the fly
+	- stashed
+- spf/grid-plain.html: auto refresh!!1
+- spf/products-scrolling: non-document scroll parent not worky
+- spf/tablesorter.html: same as grid-plain.html, needs auto refresh
+- ui/grid:
+- ui/observable:

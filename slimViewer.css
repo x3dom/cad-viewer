@@ -1,0 +1,515 @@
+html, body, #view, canvas, X3D, x3d, #x3dViewport {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#view {
+}
+
+#view .ui-header {
+    position: absolute;
+    width: 100%;
+    z-index: 999999;
+}
+
+#view .ui-header .ui-title {
+    text-align: left;
+    margin: 0.6em 20px 0.8em;
+}
+
+#x3dViewport {
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: rgb(67, 67, 67); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(67, 67, 67, 1) 0%, rgba(7, 7, 7, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(67, 67, 67, 1)), color-stop(100%, rgba(7, 7, 7, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(67, 67, 67, 1) 0%, rgba(7, 7, 7, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(67, 67, 67, 1) 0%, rgba(7, 7, 7, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(67, 67, 67, 1) 0%, rgba(7, 7, 7, 1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(67, 67, 67, 1) 0%, rgba(7, 7, 7, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#434343', endColorstr = '#070707', GradientType = 0); /* IE6-9 */
+}
+
+X3D, x3d, canvas {
+    display: block;
+}
+
+#CoordinateAxes {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 100px;
+    height: 100px;
+
+    z-index: 0;
+    /*
+    border: 1px solid #79B7E7;
+    */
+}
+
+#search {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+.ui-autocomplete {
+    top: 2.45em !important;
+    left: 350px !important;
+    background: none !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+
+    max-height: 90% !important;
+    overflow: auto !important;
+
+    border-top-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    -webkit-border-top-right-radius: 0px;
+
+    border-top-left-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-left-radius: 0px;
+
+    border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+
+    border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+}
+
+.jstree li.ui-btn-up-c {
+    text-shadow: 2px 2px 3px #444;
+}
+
+.jstree li.ui-btn-hover-c {
+    text-shadow: 2px 2px 5px #999;
+}
+
+.pos_dropdown {
+    position: absolute;
+    width: 200px;
+    top: 2.7em;
+    right: 0px;
+}
+
+.pos_leftPane {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    overflow: auto;
+    padding: 2.7em 0 0 0 !important;
+    margin: 0 0 0 0 !important;
+    background-color: rgba(50, 50, 50, .5);
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul.edgetoedge {
+    margin: 0;
+    padding: 0;
+    border-width: 0 0 0 1px;
+    -webkit-border-radius: 0;
+    border-radius: 0
+}
+
+ul#resultlist li strong {
+    font-weight: bold;
+    font-size: 1.15em;
+}
+
+#resultlist li img {
+    float: left;
+    margin-right: 5px;
+    width: 60px;
+    height: 40px;
+}
+
+ul.edgetoedge li a {
+    text-shadow: 2px 2px 3px #444;
+    color: #ffffff !important;
+    font-weight: normal !important;
+    font-size: 0.9em;
+    text-decoration: none;
+    display: block;
+
+}
+
+ul.edgetoedge li {
+    background-image: none;
+
+    background: rgb(40, 40, 41); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(40, 40, 41, 1) 0%, rgba(57, 57, 58, 1) 54%, rgba(47, 48, 49, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(40, 40, 41, 1)), color-stop(54%, rgba(57, 57, 58, 1)), color-stop(100%, rgba(47, 48, 49, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(40, 40, 41, 1) 0%, rgba(57, 57, 58, 1) 54%, rgba(47, 48, 49, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(40, 40, 41, 1) 0%, rgba(57, 57, 58, 1) 54%, rgba(47, 48, 49, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(40, 40, 41, 1) 0%, rgba(57, 57, 58, 1) 54%, rgba(47, 48, 49, 1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(40, 40, 41, 1) 0%, rgba(57, 57, 58, 1) 54%, rgba(47, 48, 49, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#282829', endColorstr = '#2f3031', GradientType = 0); /* IE6-9 */
+
+    border-bottom: 1px solid #1e1e1f;
+    border-top: 1px solid #343536;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -moz-binding: url('bindings.xml#ellipsis');
+    /* mit "bindings.xml#none" deaktivierbar*/
+}
+
+ul.edgetoedge li:first-child {
+    border-top: 0
+}
+
+.search {
+    height: 2.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.5em;
+    width: 100%;
+}
+
+#tabs {
+    position: fixed;
+    z-index: 99;
+    bottom: 0px;
+    height: 1.8em;
+    width: 350px;
+}
+
+#headerMenuQuickLinks img {
+    height: 18px;
+    width: 20px;
+}
+
+#tabs .ui-btn-inner {
+    padding: 0;
+}
+
+#tabs .ui-btn-text {
+    height: 100%;
+    display: inline-block;
+    padding-top: 0.5em;
+}
+
+#tabs img {
+    height: 19px;
+    margin-top: -3px;
+}
+
+/* to avoid wrong shaddows in toggle buttons */
+div.ui-slider-switch.ui-slider-mini a.ui-slider-handle .ui-btn-inner {
+    border: none;
+}
+
+/**************************************
+ JSTREE
+**************************************/
+#sceneGraphContainer {
+    margin: 0;
+}
+
+#switchViewTreeSliderContainer {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 40px;
+    left: 260px;
+}
+
+#tree {
+    background-color: transparent;
+    padding-bottom: 50px;
+}
+
+#tree ul:first-child {
+    margin-top: 0;
+}
+
+#tree ul {
+    margin: 0;
+    width: 100%
+}
+
+#tree.jstree li a {
+    width: 100%;
+    display: inline-block !important;
+    color: #fff;
+}
+
+#tree.jstree li.activeNode {
+    background-color: rgba(190, 255, 0, 0.3);
+}
+
+#tree.jstree li.activeNode a {
+    background-color: rgba(190, 255, 0, 1) !important;
+}
+
+#tree.jstree li.activeNode ul a{
+    background-color: rgba(50, 50, 50, 1) !important;
+}
+
+.jstree-default .jstree-unchecked > a > .jstree-checkbox {
+    background-position: -0px -18px !important;
+}
+
+.jstree-default .jstree-undetermined > a > .jstree-checkbox {
+    background-position: -18px -18px !important;
+}
+
+.jstree-default .jstree-checked > a > .jstree-checkbox {
+    background-position: -36px -18px !important;
+}
+
+.jstree a > ins {
+    height: 18px !important;
+    width: 18px !important;
+}
+
+/**************************************
+ accordion VIEW ONLY
+**************************************/
+.accordionView.jstree {
+    padding: 0;
+}
+
+.accordionView.jstree li, .accordionView.jstree li a {
+    box-sizing: border-box !important;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box !important;
+    -ms-box-sizing: border-box;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+.accordionView.jstree li {
+    /*
+    box-sizing: border-box !important;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box !important;
+    -ms-box-sizing: border-box;
+    */
+
+    min-height: 0px !important;
+
+    margin-right: -1px;
+    margin-bottom: -1px;
+
+    background-color: rgba(255, 255, 255, .1) !important;
+
+}
+
+.accordionView.jstree li.first {
+    margin-right: 0px;
+    margin-bottom: 0px;
+    background-color: rgba(50, 50, 50, .5) !important;
+}
+
+.accordionView.jstree .jstree-open {
+    background-color: rgba(0, 255, 0, .5);
+}
+
+.accordionView.jstree .jstree-closed {
+    background-color: rgba(50, 50, 50, .8);
+}
+
+.accordionView.jstree .jstree-closed a,
+.accordionView.jstree .jstree-leaf a,
+.accordionView.jstree .activeNode li a {
+    background-color: rgba(50, 50, 50, .9) !important;
+}
+
+.accordionView.jstree .activeNode a {
+    background-color: rgba(255, 255, 0, .6);
+}
+
+.accordionView.jstree li a {
+    padding: 5px;
+    height: auto !important;
+    background-color: rgba(0, 255, 0, .2);
+}
+
+.accordionView.jstree li a:hover {
+    background-color: rgba(0, 255, 255, .2);
+    /*
+    -moz-box-shadow: 0px 0px 12px #387bbe /*{global-active-background-color}* /;
+    -webkit-box-shadow: 0px 0px 12px #387bbe /*{global-active-background-color}* /;
+    box-shadow: 0px 0px 12px #387bbe /*{global-active-background-color}* /;
+    */
+}
+
+.accordionView.jstree li.ui-li-has-count .ui-li-count {
+    margin-top: 0.2em;
+    float: right;
+    right: 10px;
+    top: 0;
+}
+
+.accordionView.jstree li ins.jstree-icon {
+    display: none !important;
+}
+
+/**************************************
+ TREE VIEW ONLY
+**************************************/
+
+.treeContainer ul li small.counter {
+    display: none;
+}
+
+.treeContainer .base-chevron, .treeContainer ul li.arrow:after, .treeContainer ul li.forward:after {
+    content: "";
+    font-size: 0px;
+    height: 0;
+    line-height: 0px;
+}
+
+.treeContainer li {
+    border: none;
+}
+
+.treeContainer li a span.ui-li-count {
+    display: none;
+}
+
+.treeContainer .jstree-unchecked {
+    opacity: 0.3;
+}
+.treeContainer .jstree-unchecked .jstree-unchecked {
+    opacity: 1.0;
+}
+
+/***********************************************
+ * menu for settings
+***********************************************/
+#menuContainer {
+    margin: 0;
+    padding: 0;
+}
+
+#menuContainer .ui-collapsible-set,
+#menuContainer .ui-collapsible,
+#menuContainer .ui-collapsible-content,
+#menuContainer  .ui-collapsible-heading {
+    margin: 0;
+}
+
+/* avoid rounded corners for headings */
+#menuContainer h3.ui-collapsible-heading a {
+    webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+
+#menuContainer img {
+    height: 18px;
+    margin: 0 10px -7px 0;
+    padding: 3px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#menuContainer .ui-collapsible-content {
+    padding: 0;
+}
+
+#menuContainer .menuGroupHide {
+    display: none;
+}
+
+#menuContainer .ui-li-has-arrow .ui-btn-inner a.ui-link-inherit {
+    padding-right: 10px;
+}
+
+#menuContainer .menu_type_toggleSlider {
+    padding: 0;
+}
+
+#menuContainer .menu_type_toggleSlider .sliderText {
+    padding-top: 8.75px;
+    padding-bottom: 8.75px;
+    display: inline-block;
+}
+
+/***********************************************
+ * bread crumbs tree
+***********************************************/
+.breadCrumbLeaf {
+}
+
+.breadCrumbInnerNode {
+    color: #888;
+}
+
+.breadCrumbInnerNode img {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: -3px;
+}
+
+/***********************************************
+ * metadata and annotations
+***********************************************/
+#metaDataContainer .ui-collapsible,
+#annotationsContainer .ui-collapsible,
+#metaDataContainer .ui-collapsible-heading,
+#annotationsContainer .ui-collapsible-heading,
+#metaDataContainer .ui-collapsible-content,
+#annotationsContainer .ui-collapsible-content {
+    margin: 0;
+}
+
+#metaDataContainer p, #annotationsContainer p {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(50, 50, 50, 0.9);
+    -moz-box-shadow: 0px 0px 10px rgba(50, 50, 50, 1);
+    -webkit-box-shadow: 0px 0px 10px rgba(50, 50, 50, 1);
+    box-shadow: 0px 0px 10px rgba(50, 50, 50, 1);
+
+}
+
+#pickAnnotationLocation{
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 2.7em;
+    padding: 5px;
+    z-index: 9999999;
+    background-color: gray;
+}
+
+/***********************************************
+ * PopUp
+***********************************************/
+.popUp {
+    padding: 10px;
+    margin: 0;
+    opacity: 0.96;
+    display: block;
+}
+
+.popUp h3, .popUp p {
+    padding: 0;
+    margin: 0;
+}
+
