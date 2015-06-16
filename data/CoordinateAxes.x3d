@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+  <head>
+    <meta content='CoordinateAxes.x3d' name='title'/>
+    <meta content='Don Brutzman and Byounghyun Yoo' name='creator'/>
+    <meta content='14 July 2000' name='created'/>
+    <meta content='21 November 2009' name='modified'/>
+    <meta content='X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame.' name='description'/>
+    <meta content='CoordinateAxes.png' name='image'/>
+    <meta content='CoordinateAxes.WhiteBackground.png' name='image'/>
+    <meta content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxesNSEW.x3d' name='identifier'/>
+    <meta content='CoordinateAxes.x3d' name='reference'/>
+    <meta content='CoordinateAxesInlineExample.x3d' name='reference'/>
+    <meta content='https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d' name='reference'/>
+    <meta content='http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/geodata.html#GeoLocation' name='reference'/>
+    <meta content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <!-- Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. -->
+    <!-- This NavigationInfo allows examine mode and will be overridden by any parent scene. -->
+    <!-- Each arrow goes from +1m to -1m to allow linear scaling to fit a scene -->
+    <!-- Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user -->
+    <!-- From X3D Abstract Specification 25.3.3 GeoLocation: "In addition to placing a X3D model at the correct geospatial location, the GeoLocation node will also adjust the orientation of the model appropriately. The standard X3D coordinate system specifies that the +Y axis = up, +Z = out of the screen, and +X = towards the right. The GeoLocation node will set the orientation so that the +Y axis is the up direction for that local area (the normal to the tangent plane on the ellipsoid), −Z points towards the north pole, and +X is east." -->
+
+    <Transform id="CoordinateAxes">
+		<!-- Vertical Y arrow and label -->
+		<Group DEF='ArrowGreen'>
+
+		<Transform translation='0 0.5 0'>
+			<Shape>
+			  <Cylinder DEF='ArrowCylinder' bottom='false' radius='.025' height='1.0' top='false'/>
+			  <Appearance DEF='Green'>
+				<Material diffuseColor='.1 .6 .1' emissiveColor='.05 .2 .05'/>
+			  </Appearance>
+			</Shape>
+			<Transform translation='0 0.5 0'>
+			  <Shape>
+				<Cone DEF='ArrowCone' bottomRadius='.10' height='.1'/>
+				<Appearance USE='Green'/>
+			  </Shape>
+			</Transform>
+		</Transform>
+		</Group>
+
+
+		<Transform rotation='0 0 1 -1.57079'>
+			<!-- Horizontal X arrow and label -->
+			<Group DEF='ArrowRed'>
+				<Transform translation='0 0.5 0'>
+				  <Shape>
+					<Cylinder USE='ArrowCylinder'/>
+					<Appearance DEF='Red'>
+					  <Material diffuseColor='.7 .1 .1' emissiveColor='.33 0 0'/>
+					</Appearance>
+				  </Shape>
+				  <Transform translation='0 0.5 0'>
+					<Shape>
+					  <Cone USE='ArrowCone'/>
+					  <Appearance USE='Red'/>
+					</Shape>
+				  </Transform>
+				</Transform>
+			</Group>
+		</Transform>
+
+
+
+		<Transform rotation='1 0 0 1.57079'>
+			<!-- Perpendicular Z arrow and label, note right-hand rule -->
+			<Group DEF='ArrowBlue'>
+				<Transform translation='0 0.5 0'>
+				  <Shape>
+					<Cylinder USE='ArrowCylinder'/>
+					<Appearance DEF='Blue'>
+					  <Material diffuseColor='.3 .3 1' emissiveColor='.1 .1 .33'/>
+					</Appearance>
+				  </Shape>
+				  <Transform translation='0 0.5 0'>
+					<Shape>
+					  <Cone USE='ArrowCone'/>
+					  <Appearance USE='Blue'/>
+					</Shape>
+				  </Transform>
+				</Transform>
+			</Group>
+		</Transform>
+	
+    </Transform>
+  </Scene>
+</X3D>

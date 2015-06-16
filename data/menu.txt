@@ -1,0 +1,167 @@
+[
+	{
+        "header":     "tree",
+        "headerIconPath": "52-pine-tree.png",
+        "sectionId":   "tree",
+        "entries": [
+            {
+                "text": "open",
+                "id":   "debug_open",
+                "icon":	""
+            },
+            {
+                "text": "close",
+                "id":   "debug_close",
+                "icon":	""
+            }
+        ]
+    },
+    {
+        "header":     "Views",
+        "headerIconPath": "74-location.png",
+        "sectionId":   "views",
+		"entries": [
+			{
+				"text": "reset current View",
+				"id":   "view_reset_cur",
+				"icon":	""
+			},
+			{
+				"text": "upright view",
+				"id":   "view_upright",
+				"icon":	""
+			},
+			{
+				"text": "top View",
+				"id":   "view_top",
+				"icon":	""
+			},
+			{
+				"text": "bottom View",
+				"id":   "view_bottom",
+				"icon":	""
+			},
+			{
+				"text": "left View",
+				"id":   "view_left",
+				"icon":	""
+			},
+			{
+				"text": "right View",
+				"id":   "view_right",
+				"icon":	""
+			},
+			{
+				"text": "front View",
+				"id":   "view_front",
+				"icon":	""
+			},
+			{
+				"text": "back View",
+				"id":   "view_back",
+				"icon":	""
+			},
+			{
+				"text": "next View",
+				"id":   "view_next",
+				"icon":	""
+			},
+			{
+				"text": "prev View",
+				"id":   "view_pref",
+				"icon":	""
+			}
+        ]
+	},
+    {
+        "header":     "Visibility",
+        "headerIconPath": "12-eye.png",
+        "sectionId":   "visibility",
+		"entries": [
+			{
+				"text": "show all",
+				"id":   "visib_showAll",
+				"icon":	""
+			},
+			{
+				"text": "hide all",
+				"id":   "visib_hideAll",
+				"icon":	""
+			},
+			{
+				"text": "faces",
+				"id":   "visib_faces",
+				"icon":	""
+			},
+			{
+				"text": "points",
+				"id":   "visib_points",
+				"icon":	""
+			}
+        ]
+	},
+    {
+        "header":     "Meta Info",
+        "headerIconPath": "179-notepad.png",
+        "sectionId":   "metaInfo",
+		"entries": [
+			{
+				"text": "new Annotation",
+				"id":   "newAnnotation",
+				"icon":	""
+			},
+			{
+				"stateCnt": "2",
+				"stateCurrent": "0",
+				"text": "popUp Annota...",
+				"lable": ["on", "off"],
+				"val": ["true", "false"],
+				"id":   "isPopUpAnnotations",
+				"icon":	""
+			},
+			{
+				"stateCnt": "2",
+				"stateCurrent": "0",
+				"text": "Marker Annota... ",
+				"lable": ["on", "off"],
+				"val": ["true", "false"],
+				"id":   "showAnnotationMarker",
+				"icon":	""
+			},
+			{
+				"stateCnt": "2",
+				"stateCurrent": "0",
+				"text": "popUp MetaData",
+				"lable": ["off", "on"],
+				"val": ["false", "true"],
+				"id":   "isPopUpMetaData",
+				"icon":	""
+			}
+        ]
+	},
+    {
+        "header":     "Settings",
+        "headerIconPath": "19-gear.png",
+        "sectionId":   "settings",
+		"entries": [
+			{
+				"stateCnt": "2",
+				"stateCurrent": "0",
+				"text": "keep menu",
+				"lable": ["off", "on"],
+				"val": ["false", "true"],
+				"id":   "toggleLockMenu",
+				"icon":	""
+			},
+			{
+				"stateCnt": "2",
+				"stateCurrent": "0",
+				"text": "fly to",
+				"lable": [ "on", "off"],
+				"val": ["true", "false"],
+				"id":   "showObjOnSelect",
+				"icon":	""
+			}
+        ]
+	}
+]

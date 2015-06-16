@@ -3,12 +3,12 @@ var MYAPP = {};
 /****
  * global configuration
  */
-MYAPP.model = "conrod"; //"engine3" "conrod" "test"         // for the folder ind data containing the model and all its data
-MYAPP.modelRootId = "modelRoot";                            // for the inline element
-MYAPP.centerOfRotation = "1.2828279 152.4117 27.60026";     // set center of rotation
-MYAPP.scaleAnnotMarker = 10;                             // set the size of annotation markers
+MYAPP.model = "engine3"; //f.e. "engine3" "conrod" "test" from the test data 	// for the folder ind data containing the model and all its data
+MYAPP.modelRootId = "modelRoot";                            					// for the inline element
+MYAPP.centerOfRotation = "1.2828279 152.4117 27.60026";     					// set center of rotation
+MYAPP.scaleAnnotMarker = 1;                             						// set the size of annotation markers
 
-MYAPP.sortTree = false;                                 // should the tre to be sorted alphabetically??
+MYAPP.sortTree = false;                                 						// should the tre to be sorted alphabetically??
 
 // target id's to insert the content of different modules
 MYAPP.menuContainerID = "menuContainer";
