@@ -2,7 +2,7 @@ Slim X3DOM CAD Viewer
 
 ![Teaser](/img/teaser.png)
 
-Usage: 
+Usage:
 
 ---- general ----
 - in the header of 'main.js' in the section "global configuration".
