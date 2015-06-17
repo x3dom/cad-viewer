@@ -1,1 +1,0 @@
-this folder is not used for the program, it is just for testing and to have the full libs
