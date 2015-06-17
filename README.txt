@@ -1,4 +1,9 @@
-######## how to use ########
+Slim X3DOM CAD Viewer
+
+![Teaser](/img/teaser.png)
+
+Usage: 
+
 ---- general ----
 - in the header of 'main.js' in the section "global configuration".
   you will find the most  important configuration settings:
